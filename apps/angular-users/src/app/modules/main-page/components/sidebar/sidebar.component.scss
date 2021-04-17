@@ -1,0 +1,29 @@
+.sidebar__container {
+    height: 100%;
+    width: 100%;
+    background-color: cornflowerblue;
+    color: white;
+
+    .sidebar__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 18px;
+        color: white;
+
+        .sidebar__item {
+            margin-top: 20px;
+            width: 200px;
+            border: 1px solid #fff;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+    }
+}

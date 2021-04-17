@@ -1,0 +1,10 @@
+<div *ngIf="!editPostMode" class="post__content">
+    <quill-view-html [content]="content"></quill-view-html>
+</div>
+
+<div *ngIf="editPostMode" class="post__content_edit">
+    <app-quill-editor-component
+        [initialValue]="content"
+        (onEditorContentChange)="onChange($event)"
+    ></app-quill-editor-component>
+</div>

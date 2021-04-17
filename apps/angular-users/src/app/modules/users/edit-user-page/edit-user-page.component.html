@@ -1,0 +1,27 @@
+<mat-card class="card__container">
+
+    <app-user-form [user]="userData$ | async" (onChangeUser)="changeUserData($event)"></app-user-form>
+
+    <div class="btn__container">
+        <span>
+            <button
+                mat-flat-button
+                color="primary"
+                class="btn"
+                (click)="updateUserData()"
+            >Save</button>
+        </span>
+
+        <span>
+            <button
+                mat-flat-button
+                color="primary"
+                class="btn"
+                routerLink="/users"
+            >Cancel</button>
+        </span>
+    </div>
+
+</mat-card>
+
+

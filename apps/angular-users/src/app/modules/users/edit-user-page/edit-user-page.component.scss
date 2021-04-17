@@ -1,0 +1,22 @@
+.card__container {
+    height: 500px;
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+
+    .form__container {
+        width: 100%;
+    }
+
+    .btn__container {
+        height: 40%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .btn {
+            width: 200px;
+        }
+    }
+}

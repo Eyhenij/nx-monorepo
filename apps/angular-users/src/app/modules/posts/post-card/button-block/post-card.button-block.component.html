@@ -1,0 +1,70 @@
+<div class="btn__block">
+    <div class="btn__block_reactions">
+        <button
+            mat-button
+            aria-label="Like"
+            (click)="makeLike()"
+        >
+            <mat-icon color="{{post.liked ? 'warn' : 'primary'}}">thumb_up</mat-icon>
+            {{post.countOfLikes}}
+        </button>
+
+        <button
+            mat-button
+            aria-label="Dislike"
+            (click)="makeDislike()"
+        >
+            <mat-icon color="{{post.disliked ? 'warn' : 'primary'}}">thumb_down</mat-icon>
+            {{post.countOfDislikes}}
+        </button>
+
+        <button
+            mat-button
+            aria-label="Comments"
+            (click)="toggleShowComments()"
+        >
+            <mat-icon color="{{showCommentsMode ? 'warn' : 'primary'}}">question_answer</mat-icon>
+        </button>
+    </div>
+
+    <div *ngIf="!editPostMode" class="btn__block_edit">
+        <button
+            mat-button
+            mat-icon-button
+            aria-label="Edit"
+            (click)="toggleEditPostMode()"
+        >
+            <mat-icon color="primary">edit</mat-icon>
+        </button>
+
+        <button
+            mat-button
+            mat-icon-button
+            aria-label="Remove"
+            routerLink="/"
+            (click)="deletePost()"
+        >
+            <mat-icon color="primary">delete</mat-icon>
+        </button>
+    </div>
+
+    <div *ngIf="editPostMode" class="btn__block_edit">
+        <button
+            mat-button
+            mat-icon-button
+            aria-label="Submit"
+            (click)="updatePost()"
+        >
+            <mat-icon color="primary">done</mat-icon>
+        </button>
+
+        <button
+            mat-button
+            mat-icon-button
+            aria-label="Cancel"
+            (click)="toggleEditPostMode()"
+        >
+            <mat-icon color="primary">close</mat-icon>
+        </button>
+    </div>
+</div>

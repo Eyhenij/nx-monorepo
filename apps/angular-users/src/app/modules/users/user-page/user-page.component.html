@@ -1,0 +1,27 @@
+<div class="user__card">
+
+    <app-user-card [user]="user$ | async"></app-user-card>
+
+    <div *ngIf="(isAdmin$ | async)" class="btn__block">
+        <button
+            [routerLink]="'/users/' + userUUID + '/edit'"
+            mat-button
+            mat-icon-button
+            aria-label="Edit user-account">
+            <mat-icon color="primary"
+            >
+                edit</mat-icon>
+        </button>
+
+        <button
+            (click)="deleteUserById()"
+            mat-button
+            mat-icon-button
+            aria-label="Remove user-account">
+            <mat-icon color="primary"
+            >
+                delete</mat-icon>
+        </button>
+    </div>
+
+</div>

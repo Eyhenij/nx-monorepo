@@ -1,0 +1,15 @@
+<div class="page">
+
+    <div class="page__header">
+        <app-header-container></app-header-container>
+    </div>
+
+    <div class="page__content">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="onLoading" *ngIf="onLoading$ | async">
+        <app-on-loading></app-on-loading>
+    </div>
+
+</div>

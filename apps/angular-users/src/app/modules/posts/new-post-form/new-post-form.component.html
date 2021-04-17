@@ -1,0 +1,53 @@
+<div class="card__container">
+    <div>
+        <mat-form-field appearance="fill" class="input__container">
+            <mat-label>Title</mat-label>
+            <input type="text" [formControl]="titleControl" aria-label="title" matInput>
+
+            <mat-error *ngIf="titleControl.invalid && titleControl.touched">
+                <mat-error *ngIf="titleControl.hasError('required')">
+                    Post-title cannot be empty
+                </mat-error>
+
+                <mat-error *ngIf="titleControl.hasError('minlength')">
+                    Post-title must contain more then 3 symbols
+                </mat-error>
+            </mat-error>
+
+            <button
+                mat-button
+                *ngIf="titleControl.value"
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="titleControl.setValue('')">
+                <mat-icon>close</mat-icon>
+            </button>
+
+        </mat-form-field>
+    </div>
+
+    <app-quill-editor-component
+        (onEditorContentChange)="changeNewPost($event)"
+    ></app-quill-editor-component>
+
+    <div class="btn__container">
+        <span>
+            <button
+                mat-flat-button
+                color="primary"
+                class="btn"
+                (click)="onSave()"
+            >Save</button>
+        </span>
+
+        <span>
+            <button
+                mat-flat-button
+                color="primary"
+                class="btn"
+                (click)="onCancel()"
+            >Cancel</button>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="posts__container">
+    <div class="paginator__container">
+        <button
+            class="new-post"
+            mat-button
+            color="primary"
+            (click)="isCreateMode = true"
+        >
+            <mat-icon>library_add</mat-icon>
+            Add post
+        </button>
+
+        <mat-paginator
+            class="paginator"
+            showFirstLastButtons="true"
+            [length]="totalPostsCount$ | async"
+            [pageSizeOptions]="[1, 2, 3, 5]"
+            [pageSize]="pageSize"
+            (page)="onPageChange($event)"
+        ></mat-paginator>
+    </div>
+
+    <app-new-post-form
+        *ngIf="isCreateMode"
+        (onCreatePost)="createNewPost($event)"
+        (closeCreatePostMode)="isCreateMode = false"
+    ></app-new-post-form>
+    <div
+        class="post__card"
+        *ngFor="let post of (currentPosts$ | async)"
+    >
+        <app-post-card
+            [post]="post"
+            (onDeletePostEvent)="onDeletePost()"
+        ></app-post-card>
+    </div>
+</div>

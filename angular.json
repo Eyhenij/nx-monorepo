@@ -33,6 +33,7 @@
     },
     "projects": {
         "angular-users": {
+            "tags": ["scope:frontend-client"],
             "projectType": "application",
             "root": "apps/angular-users",
             "sourceRoot": "apps/angular-users/src",

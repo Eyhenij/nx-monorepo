@@ -12,7 +12,8 @@
             "enforceBuildableLibDependency": true,
             "allow": [],
             "depConstraints": [
-              { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+              { "sourceTag": "scope:angular-users", "onlyDependOnLibsWithTags": ["scope:angular-users"] },
+              { "sourceTag": "scope:nest-users", "onlyDependOnLibsWithTags": ["scope:nest-users"] }
             ]
           }
         ]

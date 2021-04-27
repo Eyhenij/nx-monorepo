@@ -17,11 +17,21 @@
     }
   },
   "projects": {
-    "angular-users": { "tags": ["scope:angular-users"] },
+    "angular-users": {
+        "tags": [
+            "scope:angular-users",
+            "type:app"
+        ]
+    },
     "angular-users-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-users"]
     },
-    "backend": { "tags": [] }
+    "backend": {
+        "tags": [
+            "scope:backend",
+            "type:app"
+        ]
+    }
   }
 }

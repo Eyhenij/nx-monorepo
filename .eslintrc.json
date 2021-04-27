@@ -22,7 +22,20 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "rules": {
+          "@typescript-eslint/interface-name-prefix": "off",
+          "@typescript-eslint/explicit-function-return-type": "off",
+          "@typescript-eslint/explicit-module-boundary-types": "off",
+          "@typescript-eslint/no-explicit-any": "off",
+          "no-console": "warn",
+          "default-case": "warn",
+          "require-await": "warn",
+          "space-in-parens": ["warn", "never"],
+          "comma-spacing": ["warn", {"before": false, "after": true}],
+          "comma-style": ["warn", "last"],
+          "eslint-disable-line": "off",
+          "eslint-disable-next-line": "off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
